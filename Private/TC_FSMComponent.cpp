@@ -28,6 +28,7 @@ void UTC_FSMComponent::BeginPlay()
 	UTC_InitState* initState = NewObject<UTC_InitState>();
 	initState->SetStateName("Init");
 	initState->SetFSM(fsm.Get());
+	initState->AddTransition("TransitionToInit", "Init");
 	initState->AddTransition("TransitionToNeutral", "Neutral");
 	initState->AddTransition("TransitionToDeinit", "Deinit");
 
@@ -51,11 +52,6 @@ void UTC_FSMComponent::BeginPlay()
 	fsm->AddState(neutralState);
 	fsm->AddState(patrolState);
 	fsm->AddState(deinitState);
-
-	if (fsm->GetCurrentState())
-	{
-		fsm->GetCurrentState()->OnEnter();
-	}
 }
 
 void UTC_FSMComponent::EndPlay(const EEndPlayReason::Type endPlayReason)
