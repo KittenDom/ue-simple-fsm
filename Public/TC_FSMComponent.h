@@ -8,7 +8,7 @@
 
 
 UCLASS(ClassGroup=(TC_FSM), meta=(BlueprintSpawnableComponent))
-class UTC_FSMComponent : public UActorComponent
+class TC_FSM_API UTC_FSMComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
