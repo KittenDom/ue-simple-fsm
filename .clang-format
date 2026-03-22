@@ -1,0 +1,175 @@
+# .clang-format — Unreal Engine 5 C++ Style
+# Place at project root or Plugins/MyPlugin/ root
+
+Language: Cpp
+Standard: c++20
+
+# --- Indentation ---
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+ContinuationIndentWidth: 4
+IndentCaseLabels: false
+IndentCaseBlocks: false
+IndentPPDirectives: None
+IndentWrappedFunctionNames: false
+NamespaceIndentation: None
+
+# --- Braces ---
+BreakBeforeBraces: Allman
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: Always
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+# --- Line Length ---
+ColumnLimit: 120
+
+# --- Spacing ---
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# --- Pointer & Reference Alignment ---
+# UE style: int32* Ptr, not int32 *Ptr
+PointerAlignment: Right
+ReferenceAlignment: Right
+DerivePointerAlignment: false
+
+# --- Includes ---
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  # 1. The paired .h for this .cpp (e.g. "MyClass.h")
+  - Regex: '^"[A-Z][a-zA-Z0-9]+\.h"'
+    Priority: 1
+  # 2. Your plugin/module public headers
+  - Regex: '^"[A-Za-z0-9/]+\.h"'
+    Priority: 2
+  # 3. Engine & CoreUObject headers
+  - Regex: '^<(CoreMinimal|Engine|UObject|GameFramework|Components)/.*>'
+    Priority: 3
+  # 4. Everything else (third party, system)
+  - Regex: '.*'
+    Priority: 4
+
+# --- Alignment ---
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveBitFields: false
+AlignConsecutiveDeclarations: false
+AlignConsecutiveMacros: false
+AlignEscapedNewlines: Right
+AlignOperands: Align
+AlignTrailingComments: true
+
+# --- Breaking ---
+AllowAllArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBinaryOperators: None
+BreakBeforeConceptDeclarations: true
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
+BreakStringLiterals: false
+
+# --- Constructor Initializers ---
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerIndentWidth: 4
+PackConstructorInitializers: Never
+
+# --- Function Parameters ---
+BinPackArguments: false
+BinPackParameters: false
+
+# --- Empty Lines ---
+MaxEmptyLinesToKeep: 2
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+# --- Macros (UE-specific) ---
+# Treat UE reflection/declaration macros as attributes
+AttributeMacros:
+  - UCLASS
+  - USTRUCT
+  - UENUM
+  - UFUNCTION
+  - UPROPERTY
+  - UMETA
+  - UINTERFACE
+  - GENERATED_BODY
+  - GENERATED_UCLASS_BODY
+  - GENERATED_USTRUCT_BODY
+  - FORCEINLINE
+  - FORCENOINLINE
+  - PURE_VIRTUAL
+  - DEPRECATED
+  - UE_DEPRECATED
+  - DECLARE_DELEGATE
+  - DECLARE_MULTICAST_DELEGATE
+  - DECLARE_DYNAMIC_DELEGATE
+  - DECLARE_DYNAMIC_MULTICAST_DELEGATE
+  - DECLARE_LOG_CATEGORY_EXTERN
+  - DECLARE_LOG_CATEGORY_CLASS
+  - TEXT
+  - CHECK
+  - CHECKF
+  - ENSURE
+  - ENSUREF
+
+StatementMacros:
+  - GENERATED_BODY
+  - GENERATED_UCLASS_BODY
+  - GENERATED_USTRUCT_BODY
+  - UE_LOG
+  - check
+  - checkf
+  - checkNoEntry
+  - ensure
+  - ensureMsgf
+  - verify
+  - verifyf
+
+# --- Misc ---
+CompactNamespaces: false
+FixNamespaceComments: true
+ReflowComments: false
+SortUsingDeclarations: true
+ShortNamespaceLines: 0
