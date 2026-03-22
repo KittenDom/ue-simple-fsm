@@ -1,5 +1,11 @@
 # Visual Studio 2015 user specific files
 .vs/
+.idea/
+
+# Claude redundant
+.claude/*
+CLAUDE.md
+
 
 # Compiled Object files
 *.slo
