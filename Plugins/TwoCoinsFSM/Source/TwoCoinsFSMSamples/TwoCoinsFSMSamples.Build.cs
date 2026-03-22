@@ -1,15 +1,14 @@
 ﻿using UnrealBuildTool;
 
-public class TC_FSM_Simple : ModuleRules
+public class TwoCoinsFSMSamples : ModuleRules
 {
-	public TC_FSM_Simple(ReadOnlyTargetRules Target) : base(Target)
+	public TwoCoinsFSMSamples(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"TC_FSM",
 			}
 		);
 
@@ -19,6 +18,7 @@ public class TC_FSM_Simple : ModuleRules
 				"Core",
 				"CoreUObject",
 				"Engine",
+				"TwoCoinsFSM",
 			}
 		);
 	}

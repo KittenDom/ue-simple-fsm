@@ -148,7 +148,7 @@ void UTC_SimpleStateManager::BindFSM_Internal()
 		UE_LOG(LogTwoCoinsFSMSimple, Error, TEXT("FSM OnFSMStateTransitionedDelegate delegate is already bound!"));
 		return;
 	}
-	onStateTransitionHandle = fsm->OnFSMStateTransitionedDelegate.AddUObject(this, &ThisClass::OnFsmStateTransitioned);
+	fsm->OnFSMStateTransitionedDelegate.AddUObject(this, &ThisClass::OnFsmStateTransitioned);
 }
 
 void UTC_SimpleStateManager::UnbindFSM_Internal() const
