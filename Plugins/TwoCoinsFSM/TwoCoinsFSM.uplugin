@@ -1,0 +1,28 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "TwoCoinsFSM",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "subajat1",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "TwoCoinsFSM",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "TwoCoinsFSMSamples",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
